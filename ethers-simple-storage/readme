@@ -1,4 +1,0 @@
-// 1- solc smart contract compile command
-// yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol
-// 2- Ganache is a fake blockchain, it comes with tons of fake accounts same like remix
-// 3- RPC Stands for Remote Procedure Call, RPC url allow us to communicate with a blockchain

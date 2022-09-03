@@ -1,39 +1,36 @@
 // in ethers.js for solidity smart contract compiling we use solc package, solc is a solidity compiler
-const ethers = require("ethers");
-const fs = require("fs-extra");
+const ethers = require("ethers")
+const fs = require("fs-extra")
+require("dotenv").config()
 async function main() {
   // we are connecting to http://127.0.0.1:7545 url
   // or we can say we are connecting with a local or fake blockchain
-  const provider = new ethers.providers.JsonRpcProvider(
-    "http://127.0.0.1:7545"
-  );
+  const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
   // Now we are connecting wallet, to connect a wallet first we have to access the private key of our wallet from ganache blockchain
-  const wallet = new ethers.Wallet(
-    "b1bb23e8019b31fa643f24bda840b189d5aa2251acdcd2dfeab06324f343a4ad",
-    provider
-  );
+  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
   // Now we have to access the abi and binary of the smart contract
-  const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf-8");
+  const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf-8")
   const binary = fs.readFileSync(
     "./SimpleStorage_sol_SimpleStorage.bin",
     "utf-8"
-  );
+  )
   // Deploy contract
   // abi, through abi we communicate with a contract
   // binary, is the final compiled code which we deply on EVM
   // wallet, through wallet we sign a transiction
-  const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
-  console.log("Contract deploying....");
-  const contract = await contractFactory.deploy();
+  const contractFactory = new ethers.ContractFactory(abi, binary, wallet)
+  console.log("Contract deploying....")
+  const contract = await contractFactory.deploy()
   // console.log(contract);
   // Wait 1 block
-  await contract.deployTransaction.wait(1);
-  const currentFavoriteNumber = await contract.retrieve();
-  console.log(`Current favorite number: ${currentFavoriteNumber.toString()}`);
-  const transictionResponse = await contract.store("100");
-  await transictionResponse.wait(1);
-  const updatedFavoriteNumber = await contract.retrieve();
-  console.log(`Updated favorite number: ${updatedFavoriteNumber}`);
+  await contract.deployTransaction.wait(1)
+  console.log(`Contract address: ${contract.address}`)
+  const currentFavoriteNumber = await contract.retrieve()
+  console.log(`Current favorite number: ${currentFavoriteNumber.toString()}`)
+  const transictionResponse = await contract.store("100")
+  await transictionResponse.wait(1)
+  const updatedFavoriteNumber = await contract.retrieve()
+  console.log(`Updated favorite number: ${updatedFavoriteNumber}`)
   // console.log(deploymentReceipt);
   // console.log("Lets deploy with only transiction data");
   // const nonce = await wallet.getTransactionCount();
@@ -53,6 +50,6 @@ async function main() {
 main()
   .then(() => process.exit(0))
   .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+    console.error(err)
+    process.exit(1)
+  })
