@@ -42,3 +42,6 @@ yarn hardhat node
 ```console
 yarn hardhat console --network networkname 
 ```
+```console
+yarn hardhat test
+```
