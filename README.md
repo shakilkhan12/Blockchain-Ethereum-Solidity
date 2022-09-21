@@ -1,6 +1,6 @@
 ## What is solcjs?
 #### Solcjs is a javascript package, which compile solidity code into binary and abi
-```console yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol ```
+```bash yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol ```
 ## How to communicate with a blockchain from JavaScript
 #### To communicate with blockchain we need three things
 #### 1- Compile your smart contracts
