@@ -1,30 +1,42 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
-
+const { ethers, run, network } = require("hardhat");
+// run allows us to run any hardhat plugin
+// hardhat network
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
-
-  const lockedAmount = hre.ethers.utils.parseEther("1");
-
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  // in the background hardhat using fake blockchain network and it's come with prive key and rpc url configured
+  const SimpleStorageFactory = await ethers.getContractFactory("SimpleStorage");
+  console.log("Deploying contract...");
+  const simpleStorage = await SimpleStorageFactory.deploy();
+  await simpleStorage.deployed();
+  console.log(`Contract address ${simpleStorage.address}`);
+  // What happens when we deploy to our hardhat network
+  if (network.config.chainId === 4 && process.env.ETHERSCAN_API_KEY) {
+    console.log("rinkey");
+    await simpleStorage.deployTransaction.wait(6);
+    await verify(simpleStorage.address, []);
+  }
+  const currentValue = await simpleStorage.retrieve();
+  console.log(`Current value: ${currentValue}`);
+  // update the current value
+  const transactionResponse = await simpleStorage.store(123);
+  await transactionResponse.wait(1);
+  const updatedValue = await simpleStorage.retrieve();
+  console.log(`Updated Value: ${updatedValue}`);
 }
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+async function verify(contractAddress, args) {
+  console.log("Verify contract....");
+  try {
+    await run("verify:verify", {
+      address: contractAddress,
+      constructorArguments: args,
+    });
+  } catch (error) {
+    if (error.message.toLowerCase().includes("already verified")) {
+      console.log("Already verified");
+    } else {
+      console.log(error);
+    }
+  }
+}
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;

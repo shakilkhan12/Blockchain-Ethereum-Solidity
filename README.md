@@ -12,3 +12,17 @@
 #### RPC Stands for Remote Procedure Call, RPC url allow us to communicate with a blockchain, in other words we can say RPC url create connection with any blockchain
 ## What is Alchemy?
 #### Alchemy is a powerful blockchain developer platform providing a suite of developer tools. Developers building apps which interact with Ethereum can use Alchemy’s powerful APIs to supercharge their apps, and leverage features not available in vanilla nodes.
+
+## What is Hardhat?
+### Hardhat is a development environment for Ethereum software. It consists of different components for editing, compiling, debugging and deploying your smart contracts and dApps, all of which work together to create a complete development environment.
+
+## Hardhat Tasks
+### Hardhat has many tasks and we use those tasks to compile and deploy smart contracts tasks and scripts both do same thing 
+## Hardhat scripts
+``` yarn hardhat ```
+``` yarn hardhat compile ```
+``` yarn hardhat run filename ```
+``` yarn hardhat run filename --network networkname ```
+``` yarn hardhat run filename --network localhost ```
+``` yarn hardhat node ```
+``` yarn hardhat console --network networkname ```
