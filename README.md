@@ -45,3 +45,6 @@ yarn hardhat console --network networkname
 ```console
 yarn hardhat test
 ```
+```console
+yarn hardhat test --grep keywordname
+```
