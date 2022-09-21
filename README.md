@@ -1,6 +1,8 @@
 ## What is solcjs?
 #### Solcjs is a javascript package, which compile solidity code into binary and abi
-```bash yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol ```
+```console 
+yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol
+```
 ## How to communicate with a blockchain from JavaScript
 #### To communicate with blockchain we need three things
 #### 1- Compile your smart contracts
@@ -19,10 +21,24 @@
 ## Hardhat Tasks
 ### Hardhat has many tasks and we use those tasks to compile and deploy smart contracts tasks and scripts both do same thing 
 ## Hardhat scripts
-``` yarn hardhat ```
-``` yarn hardhat compile ```
-``` yarn hardhat run filename ```
-``` yarn hardhat run filename --network networkname ```
-``` yarn hardhat run filename --network localhost ```
-``` yarn hardhat node ```
-``` yarn hardhat console --network networkname ```
+```console
+yarn hardhat 
+```
+```console
+yarn hardhat compile 
+```
+```console
+yarn hardhat run filename 
+```
+```console
+yarn hardhat run filename --network networkname 
+```
+```console
+yarn hardhat run filename --network localhost 
+```
+```console
+yarn hardhat node 
+```
+```console
+yarn hardhat console --network networkname 
+```
