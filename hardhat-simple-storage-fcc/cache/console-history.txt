@@ -1,0 +1,5 @@
+await simpleStorage.deployed();
+ const simpleStorage = await SimpleStorageFactory.
+const SimpleStorageFactory = await ethers.getContract
+const simpleStorage = await SimpleStorageFactory.deploy()
+await ethers.getContractFactory('SimpleStorage')
