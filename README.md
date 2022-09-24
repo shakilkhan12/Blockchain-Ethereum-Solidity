@@ -1,8 +1,5 @@
 ## What is solcjs?
 #### Solcjs is a javascript package, which compile solidity code into binary and abi
-```console
- yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol ```
-=======
 ```console 
 yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage.sol
 ```
