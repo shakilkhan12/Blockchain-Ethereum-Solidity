@@ -9,7 +9,7 @@ yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage
 2. Create connection with blockchain
 3. Create connection with wallet
 ## What is Ganache?
-###### Ganache is a fake blockchain, it comes with tons of fake accounts same like remix
+<summary>Ganache is a fake blockchain, it comes with tons of fake accounts same like remix</summary>
 ## What is RFC?
 ###### RPC Stands for Remote Procedure Call, RPC url allow us to communicate with a blockchain, in other words we can say RPC url create connection with any blockchain
 ## What is Alchemy?
