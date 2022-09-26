@@ -10,10 +10,13 @@ yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage
 3. Create connection with wallet
 ## What is Ganache?
 <summary>Ganache is a fake blockchain, it comes with tons of fake accounts same like remix</summary>
+
 ## What is RFC?
-###### RPC Stands for Remote Procedure Call, RPC url allow us to communicate with a blockchain, in other words we can say RPC url create connection with any blockchain
+<summary>RPC Stands for Remote Procedure Call, RPC url allow us to communicate with a blockchain, in other words we can say RPC url create connection with any blockchain
+</summary>
+
 ## What is Alchemy?
-###### Alchemy is a powerful blockchain developer platform providing a suite of developer tools. Developers building apps which interact with Ethereum can use Alchemy’s powerful APIs to supercharge their apps, and leverage features not available in vanilla nodes.
+<summary> Alchemy is a powerful blockchain developer platform providing a suite of developer tools. Developers building apps which interact with Ethereum can use Alchemy’s powerful APIs to supercharge their apps, and leverage features not available in vanilla nodes.</summary>
 
 ## What is Hardhat?
 ###### Hardhat is a development environment for Ethereum software. It consists of different components for editing, compiling, debugging and deploying your smart contracts and dApps, all of which work together to create a complete development environment.
