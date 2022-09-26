@@ -20,8 +20,10 @@ yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage
 
 ## Hardhat Tasks
 ###### Hardhat has many tasks and we use those tasks to compile and deploy smart contracts tasks and scripts both do same thing 
+## Hardhat Gas Reporter
+##### Hardhat gas reporter give us the statistics about gas how much gas we have used per function and contract deployment
 ## Hardhat scripts
-```console
+```shell
  yarn hardhat 
  ```
 ```console
