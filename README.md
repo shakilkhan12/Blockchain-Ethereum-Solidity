@@ -19,12 +19,14 @@ yarn solcjs --bin --abi --include-path node_modules/ --base-path . SimpleStorage
 <summary> Alchemy is a powerful blockchain developer platform providing a suite of developer tools. Developers building apps which interact with Ethereum can use Alchemy’s powerful APIs to supercharge their apps, and leverage features not available in vanilla nodes.</summary>
 
 ## What is Hardhat?
-###### Hardhat is a development environment for Ethereum software. It consists of different components for editing, compiling, debugging and deploying your smart contracts and dApps, all of which work together to create a complete development environment.
+<summary>Hardhat is a development environment for Ethereum software. It consists of different components for editing, compiling, debugging and deploying your smart contracts and dApps, all of which work together to create a complete development environment.</summary>
 
 ## Hardhat Tasks
-###### Hardhat has many tasks and we use those tasks to compile and deploy smart contracts tasks and scripts both do same thing 
+<summary>Hardhat has many tasks and we use those tasks to compile and deploy smart contracts tasks and scripts both do same thing </summary>
+
 ## Hardhat Gas Reporter
-##### Hardhat gas reporter give us the statistics about gas how much gas we have used per function and contract deployment
+<summary> Hardhat gas reporter give us the statistics about gas how much gas we have used per function and contract deployment</summary>
+
 ## Hardhat scripts
 ```shell
  yarn hardhat 
