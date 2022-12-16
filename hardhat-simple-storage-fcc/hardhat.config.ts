@@ -1,9 +1,11 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
-require("@nomiclabs/hardhat-etherscan");
-require("hardhat-gas-reporter");
-require("solidity-coverage");
-require("./tasks/block-number");
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-ethers"
+import "dotenv/config";
+import "@nomiclabs/hardhat-etherscan";
+import "hardhat-gas-reporter";
+import "solidity-coverage";
+import "./tasks/block-number";
+import "@typechain/hardhat"
 
 /** @type import('hardhat/config').HardhatUserConfig */
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL;
@@ -26,6 +28,15 @@ module.exports = {
   solidity: "0.8.13",
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
+  },
+  namedAccounts: {
+    deployer: {
+      default: 0,
+      31337: 1, // for hardhat
+    },
+    user: {
+      default: 1
+    }
   },
   gasReporter: {
     enabled: true,

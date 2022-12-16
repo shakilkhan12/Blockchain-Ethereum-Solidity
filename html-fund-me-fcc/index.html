@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Me App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="max-w-screen-xl mx-auto my-10">
+        <section class="w-full">
+            <header class="bg-gray-50 w-full px-3 py-3.5">
+                <h2 class="text-base font-medium capitalize">fundme blockchain appliation</h2>
+            </header>
+            <div class="p-3 border rounded-bl rounded-br">
+                <div class="container">
+                    <button class="inline-block bg-pink-600 text-white capitalize font-medium px-4 py-2.5 rounded" id="btn">connect metamask</button>
+                  
+                   <div class="mt-3">
+                    <label for="ethAmount block mb-3">Eth Amount</label>
+                    <input type="text" id="ethAmount" placeholder="0.1..." class="border border-gray-200 rounded outline-none px-3 py-2.5 w-[33%] block" />
+                    <button class="inline-block mt-3 bg-emerald-600 px-6 py-2 rounded text-white capitalize font-medium" id="fund">Fund</button>
+                   </div>
+                   <div class="mt-3">
+                    <button id="bl" class="inline-block bg-orange-600 text-white px-6 py-2.5 rounded font-medium capitalize">Balance</button> <br><br>
+                    <button class="inline-block bg-orange-600 text-white px-6 py-2.5 rounded font-medium capitalize" id="withdrwabutton">Withdrwa</button>
+                   </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./index.js" type="module">
+
+        // const btn = document.getElementById('btn');
+        // const container = document.querySelector('.container');
+        // let accounts;
+        // let account;
+        // ethereum.request({ method: 'eth_requestAccounts' }).then((data) => {
+        //     console.log('data: ',data)
+        //   accounts = data;
+        //   account = accounts[0]
+        //   btn.style.display = "none";
+        //   const node = document.createElement("h2");
+        //     const textnode = document.createTextNode(account);
+        //     node.appendChild(textnode);
+        //     container.appendChild(node);
+        // }).catch((err) => {
+        //     console.log(err)
+        // })
+      
+        // btn.addEventListener('click', async () => {
+        //     accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+        //     account = accounts[0];
+        //     btn.style.display = "none";
+        //     const node = document.createElement("h2");
+        //     const textnode = document.createTextNode(account);
+        //     node.appendChild(textnode);
+        //     container.appendChild(node);
+
+        // })
+        
+            
+
+       
+    </script>
+</body>
+</html>
